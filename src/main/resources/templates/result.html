@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <link th:href="@{css/bootstrap.min.css}"
+          href="../static/css/bootstrap.min.css" rel="stylesheet">
+<body>
+<form class="container-fluid" method="post" th:object="${alkoholform}">
+    <div class="form-group">
+        <label for="bier">Bier (ml)</label>
+        <input type="number" class="form-control" id="bier" name="bier" required>
+    </div>
+    <div class="form-group">
+        <label for="wein">Wein (ml)</label>
+        <input type="number" class="form-control" id="wein" name="wein" required>
+    </div>
+    <div class="form-group">
+        <label for="korn">Korn (ml)</label>
+        <input type="number" class="form-control" id="korn" name="korn" required>
+        <span class="alert" th:errors="*{korn}"></span>
+    </div>
+    <div class="form-group">
+        <label for="vodka">Vodka (ml)</label>
+        <input type="number" class="form-control" id="vodka" name="vodka" required>
+        <span class="alert" th:errors="*{vodka}"></span>
+    </div>
+    <div class="form-group">
+        <label for="whiskey">Whiskey (ml)</label>
+        <input type="number" class="form-control" id="whiskey" name="whiskey" required>
+        <span class="alert" th:errors="*{whiskey}"></span>
+    </div>
+    <button type="submit" class="btn btn-primary" id="berechnen">Ergebnis</button>
+    <div class="m-auto">
+        <h2>Ergebnis</h2>
+        <p class="result-item">Ihr Blutalkoholwert ist <span th:text="${ergebnis}"></span>%</p>
+    </div>
+
+</form>
+</head>
+
+
+</body>
+</html>

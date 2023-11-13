@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <title>Blutalkoholwert</title>
+    <link th:href="@{css/bootstrap.min.css}"
+          href="../static/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<h1>Blutalkohol Wert Rechner</h1>
+<div  th:object="${alkoholform}">
+<form class=container-fluid method="post" th:action="@{/result}" >
+    <label  for="geschlecht" >Geschlecht</label>
+    <select  id="geschlecht" name="geschlecht" required th:field="*{geschlecht}">
+        <option value="Mann">Mann</option>
+        <option value="Frau">Frau</option>
+    </select>
+    <label for="gewicht" >Gewicht in Kg</label>
+    <input  name="gewicht" id="gewicht" type="number" th:field="*{gewicht}">
+    <button type="submit" class="btn btn-primary" id="berechnen">weiter</button>
+    <p class="mt-3" id="ergebnis"></p>
+
+</form>
+</div>
+</body>
+</html>
